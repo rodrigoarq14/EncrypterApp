@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EncrypterApp.MainPage"
+             BackgroundColor="#00793d">
+
+    <StackLayout Margin="20,25,20,30" VerticalOptions="CenterAndExpand">
+        <Frame CornerRadius="20" Margin="0,0,0,10" IsVisible="True" x:Name="frame_principal_1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                
+                <Image Grid.Row="0" Grid.Column="0" Source="unsm_logo.png"
+                    WidthRequest="100"
+                    HeightRequest="100"
+                    Margin="0,0,0,0"/>
+                <Image Grid.Row="0" Grid.Column="1" Source="fisi_logo.png"
+                    WidthRequest="100"
+                    HeightRequest="100"
+                    Margin="0,0,0,0"/>
+            </Grid>
+        </Frame>
+        <Frame CornerRadius="20" IsVisible="True" x:Name="frame_principal_2">
+            <StackLayout HorizontalOptions="FillAndExpand">
+                <Label Text="CipherApp" HorizontalOptions="Center"
+                   TextColor="Black"
+                   FontSize="20"
+                   FontAttributes="Bold"/>
+                <Button Margin="0,15,0,0"
+                    Text="Cifrar"
+                    BackgroundColor="#0d6efd"
+                    TextColor="White"
+                    FontSize="20"
+                    CornerRadius="50"
+                    Clicked="Btn_vista_cifrar_clicked"/>
+                <Button Margin="0,15,0,10"
+                    Text="Descifrar"
+                    BackgroundColor="#198754"
+                    TextColor="White"
+                    FontSize="20"
+                    CornerRadius="50"
+                    Clicked="Btn_vista_descifrar_clicked"/>
+                <!--<Button Margin="0,15,0,15"
+                    Text="¿Cómo funciona?"
+                    BackgroundColor="#0dcaf0"
+                    TextColor="Black"
+                    FontSize="20"
+                    CornerRadius="50"/>-->
+            </StackLayout>
+        </Frame>
+        <Frame CornerRadius="20" IsVisible="False" x:Name="frame_cifrar">
+            <StackLayout HorizontalOptions="FillAndExpand">
+                <Label Text="Cifrado" HorizontalOptions="Center"
+                   TextColor="Black"
+                   FontSize="20"
+                   FontAttributes="Bold"/>
+                <Frame Margin="10,10,10,10" Padding="0,0,0,0" BackgroundColor="Transparent" BorderColor="Black">
+                    <Entry TextColor="Black" x:Name="clave_cifrado" Keyboard="Default" TextTransform="Uppercase" Placeholder="Clave..."/>
+                </Frame>
+                <Frame Margin="10,10,10,10" Padding="0,0,0,0" BackgroundColor="Transparent" BorderColor="Black">
+                    <Editor x:Name="texto_cifrar" Keyboard="Plain" AutoSize="TextChanges" MaxLength="180" HeightRequest="100" TextTransform="Uppercase" Placeholder="Texto a cifrar......."/>
+                </Frame>
+                <Button Margin="0,15,0,0"
+                    Text="Cifrar"
+                    BackgroundColor="#0d6efd"
+                    TextColor="White"
+                    FontSize="20"
+                    CornerRadius="50"
+                    Clicked="Btn_cifrar_clicked"/>
+                <Button Margin="0,15,0,15"
+                    Text="Volver"
+                    BackgroundColor="#6c757d"
+                    TextColor="White"
+                    FontSize="20"
+                    CornerRadius="50"
+                    Clicked="Btn_volver_clicked"/>
+            </StackLayout>
+        </Frame>
+        <Frame CornerRadius="20" IsVisible="False" x:Name="frame_descifrar">
+            <StackLayout HorizontalOptions="FillAndExpand">
+                <Label Text="Descifrar" HorizontalOptions="Center"
+                   TextColor="Black"
+                   FontSize="20"
+                   FontAttributes="Bold"/>
+                <Frame Margin="10,10,10,10" Padding="0,0,0,0" BackgroundColor="Transparent" BorderColor="Black">
+                    <Entry TextColor="Black" x:Name="clave_descifrado" Keyboard="Default" TextTransform="Uppercase" Placeholder="Clave..."/>
+                </Frame>
+                <Frame Margin="10,10,10,10" Padding="0,0,0,0" BackgroundColor="Transparent" BorderColor="Black">
+                    <Editor Keyboard="Plain" x:Name="texto_descifrar" AutoSize="TextChanges" MaxLength="180" HeightRequest="100" TextTransform="Uppercase" Placeholder="Texto a descifrar......."/>
+                </Frame>
+                <Button Margin="0,15,0,0"
+                    Text="Descifrar"
+                    BackgroundColor="#198754"
+                    TextColor="White"
+                    FontSize="20"
+                    CornerRadius="50"
+                    Clicked="Btn_descifrar_clicked"/>
+                <Button Margin="0,15,0,15"
+                    Text="Volver"
+                    BackgroundColor="#6c757d"
+                    TextColor="White"
+                    FontSize="20"
+                    CornerRadius="50"
+                    Clicked="Btn_volver_clicked"/>
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+
+</ContentPage>
