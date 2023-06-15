@@ -61,10 +61,10 @@
                    FontSize="20"
                    FontAttributes="Bold"/>
                 <Frame Margin="10,10,10,10" Padding="0,0,0,0" BackgroundColor="Transparent" BorderColor="Black">
-                    <Entry TextColor="Black" x:Name="clave_cifrado" Keyboard="Default" TextTransform="Uppercase" Placeholder="Clave..."/>
+                    <Entry TextColor="Black" x:Name="clave_cifrado" Keyboard="Default" Placeholder="Clave..."/>
                 </Frame>
                 <Frame Margin="10,10,10,10" Padding="0,0,0,0" BackgroundColor="Transparent" BorderColor="Black">
-                    <Editor x:Name="texto_cifrar" Keyboard="Plain" AutoSize="TextChanges" MaxLength="180" HeightRequest="100" TextTransform="Uppercase" Placeholder="Texto a cifrar......."/>
+                    <Editor TextColor="Black" x:Name="texto_cifrar" Keyboard="Plain" AutoSize="TextChanges" MaxLength="180" HeightRequest="100" TextTransform="Uppercase" Placeholder="Texto a cifrar......."/>
                 </Frame>
                 <Button Margin="0,15,0,0"
                     Text="Cifrar"
@@ -89,10 +89,10 @@
                    FontSize="20"
                    FontAttributes="Bold"/>
                 <Frame Margin="10,10,10,10" Padding="0,0,0,0" BackgroundColor="Transparent" BorderColor="Black">
-                    <Entry TextColor="Black" x:Name="clave_descifrado" Keyboard="Default" TextTransform="Uppercase" Placeholder="Clave..."/>
+                    <Entry TextColor="Black" x:Name="clave_descifrado" Keyboard="Default" Placeholder="Clave..."/>
                 </Frame>
                 <Frame Margin="10,10,10,10" Padding="0,0,0,0" BackgroundColor="Transparent" BorderColor="Black">
-                    <Editor Keyboard="Plain" x:Name="texto_descifrar" AutoSize="TextChanges" MaxLength="180" HeightRequest="100" TextTransform="Uppercase" Placeholder="Texto a descifrar......."/>
+                    <Editor TextColor="Black" Keyboard="Plain" x:Name="texto_descifrar" AutoSize="TextChanges" MaxLength="180" HeightRequest="100" TextTransform="Uppercase" Placeholder="Texto a descifrar......."/>
                 </Frame>
                 <Button Margin="0,15,0,0"
                     Text="Descifrar"

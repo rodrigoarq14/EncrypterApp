@@ -236,7 +236,7 @@ namespace EncrypterApp
                 if(clave_cifrado.Text.Length >= 3)
                 {
                     //OBTENEMOS LOS VALORES I,J,K DE LA CLAVE
-                    char[] claveCifrar = clave_cifrado.Text.ToCharArray();
+                    char[] claveCifrar = clave_cifrado.Text.ToUpper().ToCharArray();
                     int valorClaveI = Array.IndexOf(caracteres, claveCifrar[0].ToString());
                     valorClaveI = numeros[valorClaveI];
                     int valorClaveJ = Array.IndexOf(caracteres, claveCifrar[1].ToString());
@@ -244,13 +244,13 @@ namespace EncrypterApp
                     int valorClaveK = 0;
                     for (int i = 2; i < claveCifrar.Length; i++)
                     {
-                        valorClaveK += numeros[Array.IndexOf(caracteres, claveCifrar[i].ToString())];
+                        valorClaveK = valorClaveK + numeros[Array.IndexOf(caracteres, claveCifrar[i].ToString())];
                     }
                     //OBTENEMOS LOS VALORES DEL TEXTO A CIFRAR
                     string[] valoresBinarios = new string[texto_cifrar.Text.Length];
                     for (int i = 0; i < texto_cifrar.Text.Length; i++)
                     {
-                        valoresBinarios[i] = valores[Array.IndexOf(caracteres, texto_cifrar.Text[i].ToString())];
+                        valoresBinarios[i] = valores[Array.IndexOf(caracteres, texto_cifrar.Text[i].ToString().ToUpper())];
                     }
                     //Concatenamos en una sola cadena
                     string cadenaTodo = string.Join("", valoresBinarios);
@@ -300,21 +300,21 @@ namespace EncrypterApp
                 if (clave_descifrado.Text.Length >= 3)
                 {
                     //OBTENEMOS LOS VALORES I,J,K DE LA CLAVE
-                    char[] claveCifrar = clave_cifrado.Text.ToCharArray();
-                    int valorClaveI = Array.IndexOf(caracteres, claveCifrar[0].ToString());
+                    char[] claveDescifrar = clave_descifrado.Text.ToUpper().ToCharArray();
+                    int valorClaveI = Array.IndexOf(caracteres, claveDescifrar[0].ToString());
                     valorClaveI = numeros[valorClaveI];
-                    int valorClaveJ = Array.IndexOf(caracteres, claveCifrar[1].ToString());
+                    int valorClaveJ = Array.IndexOf(caracteres, claveDescifrar[1].ToString());
                     valorClaveJ = numeros[valorClaveJ];
                     int valorClaveK = 0;
-                    for (int i = 2; i < claveCifrar.Length; i++)
+                    for (int i = 2; i < claveDescifrar.Length; i++)
                     {
-                        valorClaveK += numeros[Array.IndexOf(caracteres, claveCifrar[i].ToString())];
+                        valorClaveK += numeros[Array.IndexOf(caracteres, claveDescifrar[i].ToString())];
                     }
                     //OBTENEMOS LOS VALORES DEL TEXTO A DESCIFRAR
-                    string[] valoresBinarios = new string[texto_cifrar.Text.Length];
-                    for (int i = 0; i < texto_cifrar.Text.Length; i++)
+                    string[] valoresBinarios = new string[texto_descifrar.Text.Length];
+                    for (int i = 0; i < texto_descifrar.Text.Length; i++)
                     {
-                        valoresBinarios[i] = valores[Array.IndexOf(caracteres, texto_cifrar.Text[i].ToString())];
+                        valoresBinarios[i] = valores[Array.IndexOf(caracteres, texto_descifrar.Text[i].ToString().ToUpper())];
                     }
                     //Concatenamos en una sola cadena
                     string cadenaTodo = string.Join("", valoresBinarios);
